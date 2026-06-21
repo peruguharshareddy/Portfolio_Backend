@@ -108,7 +108,6 @@
 
 // startServer(PORT);
 
-
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -138,7 +137,7 @@ app.use(
       "https://charan-dynamic-portfoliowebapp.vercel.app",
     ],
     credentials: true,
-  })
+  }),
 );
 
 app.use(morgan("dev"));
@@ -177,7 +176,7 @@ const io = new Server(httpServer, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://charan-dynamic-portfoliowebapp.vercel.app",
+      "https://harsha-portfolio-phi.vercel.app",
     ],
     credentials: true,
   },
