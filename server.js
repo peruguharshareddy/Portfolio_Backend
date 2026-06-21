@@ -130,14 +130,33 @@ const app = express();
 app.use(helmet({ crossOriginResourcePolicy: false }));
 app.use(compression());
 
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://harsha-portfolio-phi.vercel.app",
+//       "https://harsha-portfolio-git-main-portfolio1004.vercel.app",
+//       "*",
+//     ],
+//     credentials: true,
+//   }),
+// );
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://harsha-portfolio-phi.vercel.app",
-      "https://harsha-portfolio-git-main-portfolio1004.vercel.app",
-      "*",
-    ],
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        "[localhost](http://localhost:5173)",
+        "[harsha-portfolio-phi.vercel.app](https://harsha-portfolio-phi.vercel.app)",
+        "[harsha-portfolio-git-main-portfolio1004.vercel.app](https://harsha-portfolio-git-main-portfolio1004.vercel.app)",
+      ];
+      // Allow requests with no origin (mobile apps, Postman, etc.)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, origin || true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   }),
 );
