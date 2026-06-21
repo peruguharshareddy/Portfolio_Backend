@@ -134,7 +134,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://charan-dynamic-portfoliowebapp.vercel.app",
+      "https://harsha-portfolio-phi.vercel.app",
     ],
     credentials: true,
   }),
