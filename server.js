@@ -135,6 +135,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://harsha-portfolio-phi.vercel.app",
+      "https://harsha-portfolio-git-main-portfolio1004.vercel.app",
     ],
     credentials: true,
   }),
@@ -177,6 +178,7 @@ const io = new Server(httpServer, {
     origin: [
       "http://localhost:5173",
       "https://harsha-portfolio-phi.vercel.app",
+      "https://harsha-portfolio-git-main-portfolio1004.vercel.app",
     ],
     credentials: true,
   },
