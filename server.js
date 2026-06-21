@@ -145,10 +145,15 @@ app.use(compression());
 app.use(
   cors({
     origin: (origin, callback) => {
+      // const allowedOrigins = [
+      //   "[localhost](http://localhost:5173)",
+      //   "[harsha-portfolio-phi.vercel.app](https://harsha-portfolio-phi.vercel.app)",
+      //   "[harsha-portfolio-git-main-portfolio1004.vercel.app](https://harsha-portfolio-git-main-portfolio1004.vercel.app)",
+      // ];
       const allowedOrigins = [
-        "[localhost](http://localhost:5173)",
-        "[harsha-portfolio-phi.vercel.app](https://harsha-portfolio-phi.vercel.app)",
-        "[harsha-portfolio-git-main-portfolio1004.vercel.app](https://harsha-portfolio-git-main-portfolio1004.vercel.app)",
+        "http://localhost:5173",
+        "https://harsha-portfolio-phi.vercel.app",
+        "https://harsha-portfolio-git-main-portfolio1004.vercel.app",
       ];
       // Allow requests with no origin (mobile apps, Postman, etc.)
       if (!origin || allowedOrigins.includes(origin)) {
